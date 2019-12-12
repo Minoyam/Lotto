@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/action_random"
+        android:enabled="true"
+        android:icon="@drawable/ic_menu_random_24dp"
+        android:title="@string/menu_random" />
+    <item
+        android:id="@+id/action_result"
+        android:enabled="true"
+        android:icon="@drawable/ic_menu_result_24dp"
+        android:title="@string/menu_result" />
+    <item
+        android:id="@+id/action_favorite"
+        android:enabled="true"
+        android:icon="@drawable/ic_menu_favorite_24dp"
+        android:title="@string/menu_favorite" />
+</menu>
