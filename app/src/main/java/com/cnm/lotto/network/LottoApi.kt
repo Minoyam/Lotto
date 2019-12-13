@@ -5,9 +5,9 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface LottoApi {
-    @GET("v1/lotto")
+    @GET("/api/v1/lotto")
     fun getLotto(
-        @Query("query") query: String
+        @Query("yyyyMMdd") query: Int
     ): Call<LottoResponse>
 
 }

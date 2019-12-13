@@ -1,11 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
-    <TextView
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@id/iv_ball_4"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/ib_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:scaleY="2"
+            android:src="@drawable/ic_arrow_back_black_24dp" />
+
+        <TextView
+            android:id="@+id/tv_draw_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:textColor="#000000"
+            android:textSize="32sp"
+            tools:text="2019.12.12 (888회)" />
+
+        <ImageButton
+            android:id="@+id/ib_forward"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:scaleY="2"
+            android:src="@drawable/ic_arrow_forward_black_24dp" />
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/pb_loading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="result"/>
-</LinearLayout>
+        android:layout_gravity="center"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_ball_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/iv_ball_2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/ball_01" />
+
+    <ImageView
+        android:id="@+id/iv_ball_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/iv_ball_3"
+        app:layout_constraintStart_toEndOf="@id/iv_ball_1"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/ball_02" />
+
+    <ImageView
+        android:id="@+id/iv_ball_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/iv_ball_4"
+        app:layout_constraintStart_toEndOf="@id/iv_ball_2"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/ball_03" />
+
+    <ImageView
+        android:id="@+id/iv_ball_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/iv_ball_5"
+        app:layout_constraintStart_toEndOf="@id/iv_ball_3"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/ball_04" />
+
+    <ImageView
+        android:id="@+id/iv_ball_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/iv_ball_6"
+        app:layout_constraintStart_toEndOf="@id/iv_ball_4"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/ball_05" />
+
+    <ImageView
+        android:id="@+id/iv_ball_6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/iv_plus"
+        app:layout_constraintStart_toEndOf="@id/iv_ball_5"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/ball_06" />
+
+    <ImageView
+        android:id="@+id/iv_plus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_add_black_24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/iv_ball_bonus"
+        app:layout_constraintStart_toEndOf="@id/iv_ball_6"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_ball_bonus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/iv_plus"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/ball_07" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

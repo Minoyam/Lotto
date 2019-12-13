@@ -45,7 +45,7 @@ data class LottoResponse(
             @SerializedName("winningCnt")
             val winningCnt: Int,
             @SerializedName("winningPriceByRank")
-            val winningPriceByRank: Int
+            val winningPriceByRank: Long
         )
     }
 }
