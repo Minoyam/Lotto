@@ -7,9 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.cnm.lotto.BallItem
+import com.cnm.lotto.DateBase
 import com.cnm.lotto.R
-import com.cnm.lotto.network.LottoResponse
 import com.cnm.lotto.network.NetworkHelper
+import com.cnm.lotto.network.lotto.LottoResponse
 import kotlinx.android.synthetic.main.fragment_random.iv_ball_1
 import kotlinx.android.synthetic.main.fragment_random.iv_ball_2
 import kotlinx.android.synthetic.main.fragment_random.iv_ball_3
@@ -20,14 +21,11 @@ import kotlinx.android.synthetic.main.fragment_result.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import java.text.SimpleDateFormat
-import java.util.*
 
 
-class ResultFragment : Fragment() {
+class ResultFragment : Fragment(), DateBase {
 
-    private val currentTime = Calendar.getInstance().time
-    private val nowData = SimpleDateFormat("yyyyMMdd", Locale.KOREA).format(currentTime).toInt()
+    private val nowDate = getDate()
     private var date = 0
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -40,7 +38,7 @@ class ResultFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         if (date == 0) {
-            date = nowData
+            date = nowDate
             winningNumberCheck(date)
         }
         ib_back.setOnClickListener {
@@ -50,7 +48,7 @@ class ResultFragment : Fragment() {
         }
         ib_forward.setOnClickListener {
             showLoading()
-            if(date !=nowData) {
+            if (date != nowDate) {
                 date += 7
                 winningNumberCheck(date)
             }
@@ -72,7 +70,6 @@ class ResultFragment : Fragment() {
                     val body = response.body()
                     if (body != null) {
                         setLottoList(body.body)
-                        Log.e("Network", "${body.body}")
                     }
                 }
             }
@@ -92,6 +89,7 @@ class ResultFragment : Fragment() {
         iv_ball_bonus.setImageResource(ballItem[body.bonusNum - 1].ballImgResId)
 
     }
+
     private fun showLoading() {
         pb_loading.visibility = View.VISIBLE
     }

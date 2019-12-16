@@ -6,10 +6,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.cnm.lotto.BallItem
+import com.cnm.lotto.DateBase
 import com.cnm.lotto.R
 import kotlinx.android.synthetic.main.fragment_random.*
 
-class RandomFragment : Fragment() {
+class RandomFragment : Fragment(){
+
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -28,7 +31,7 @@ class RandomFragment : Fragment() {
             iv_ball_4.setImageResource(ballItem[3].ballImgResId)
             iv_ball_5.setImageResource(ballItem[4].ballImgResId)
             iv_ball_6.setImageResource(ballItem[5].ballImgResId)
-
         }
+
     }
 }

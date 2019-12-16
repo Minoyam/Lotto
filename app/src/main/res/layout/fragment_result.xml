@@ -10,7 +10,6 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@id/iv_ball_4"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton

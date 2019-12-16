@@ -1,4 +1,4 @@
-package com.cnm.lotto.network
+package com.cnm.lotto.network.lotto
 
 import retrofit2.Call
 import retrofit2.http.GET

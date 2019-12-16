@@ -1,4 +1,4 @@
-package com.cnm.lotto.network
+package com.cnm.lotto.network.lotto
 
 
 import com.google.gson.annotations.SerializedName
