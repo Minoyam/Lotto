@@ -16,11 +16,11 @@ class SajuFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-            val args = arguments
-            tv_test.text = args!!.getString("summary")
-            Log.e("summary","${args.getString("summary")}")
-
         return inflater.inflate(R.layout.fragment_saju, container, false)
     }
 
+
+    fun sajuSummary(summary: String ) {
+        tv_summary.text = summary
+    }
 }
