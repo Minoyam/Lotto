@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="animal_name">
+        <item>쥐</item>
+        <item>소</item>
+        <item>호랑이</item>
+        <item>토끼</item>
+        <item>용</item>
+        <item>뱀</item>
+        <item>말</item>
+        <item>양</item>
+        <item>원숭이</item>
+        <item>닭</item>
+        <item>개</item>
+        <item>돼지</item>
+    </string-array>
+</resources>

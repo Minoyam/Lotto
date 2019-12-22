@@ -1,6 +1,6 @@
 package com.cnm.lotto.network.saju
 
-import retrofit2.Call
+import io.reactivex.Observable
 import retrofit2.http.GET
 import retrofit2.http.Query
 
@@ -11,5 +11,5 @@ interface SajuApi {
         @Query("targetMonth") month: Int,
         @Query("targetDay") day: Int,
         @Query("animal") animal: Int
-    ): Call<SajuResponse>
+    ): Observable<SajuResponse>
 }

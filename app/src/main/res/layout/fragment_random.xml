@@ -17,10 +17,6 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.viewpager.widget.ViewPager
-            android:id="@+id/vp_saju"
-            android:layout_width="match_parent"
-            android:layout_height="200dp" />
     </FrameLayout>
 
     <ImageView
