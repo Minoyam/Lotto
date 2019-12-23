@@ -46,9 +46,4 @@ class MainActivity : AppCompatActivity() {
         return true
     }
 
-    fun sajuSummary(summary : String)
-    {
-        val fragment = supportFragmentManager.findFragmentByTag("SAJU") as SajuFragment?
-        fragment?.sajuSummary(summary)
-    }
 }

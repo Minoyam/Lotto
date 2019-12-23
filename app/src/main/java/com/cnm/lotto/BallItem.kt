@@ -1,7 +1,7 @@
 package com.cnm.lotto
 
 enum class BallItem(
-    val ballImgResId : Int
+    val ImgResId : Int
 )
 {
     B1(R.drawable.ball_01),
@@ -49,6 +49,5 @@ enum class BallItem(
     B43(R.drawable.ball_43),
     B44(R.drawable.ball_44),
     B45(R.drawable.ball_45)
-
-
 }
+

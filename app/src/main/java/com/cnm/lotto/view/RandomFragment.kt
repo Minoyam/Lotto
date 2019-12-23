@@ -32,12 +32,12 @@ class RandomFragment : Fragment() {
 
     private fun lottoCreate() {
         val ballItem = BallItem.values().toList().shuffled()
-        iv_ball_1.setImageResource(ballItem[0].ballImgResId)
-        iv_ball_2.setImageResource(ballItem[1].ballImgResId)
-        iv_ball_3.setImageResource(ballItem[2].ballImgResId)
-        iv_ball_4.setImageResource(ballItem[3].ballImgResId)
-        iv_ball_5.setImageResource(ballItem[4].ballImgResId)
-        iv_ball_6.setImageResource(ballItem[5].ballImgResId)
+        iv_ball_1.setImageResource(ballItem[0].ImgResId)
+        iv_ball_2.setImageResource(ballItem[1].ImgResId)
+        iv_ball_3.setImageResource(ballItem[2].ImgResId)
+        iv_ball_4.setImageResource(ballItem[3].ImgResId)
+        iv_ball_5.setImageResource(ballItem[4].ImgResId)
+        iv_ball_6.setImageResource(ballItem[5].ImgResId)
     }
 
     private fun itemSelected(): Boolean {

@@ -76,13 +76,13 @@ class ResultFragment : Fragment(), DateBase {
         val ballItem = mutableListOf<BallItem>()
         ballItem.addAll(BallItem.values())
         tv_draw_date.text = "${body.drawDate} (${body.drawNo})"
-        iv_ball_1.setImageResource(ballItem[body.num1 - 1].ballImgResId)
-        iv_ball_2.setImageResource(ballItem[body.num2 - 1].ballImgResId)
-        iv_ball_3.setImageResource(ballItem[body.num3 - 1].ballImgResId)
-        iv_ball_4.setImageResource(ballItem[body.num4 - 1].ballImgResId)
-        iv_ball_5.setImageResource(ballItem[body.num5 - 1].ballImgResId)
-        iv_ball_6.setImageResource(ballItem[body.num6 - 1].ballImgResId)
-        iv_ball_bonus.setImageResource(ballItem[body.bonusNum - 1].ballImgResId)
+        iv_ball_1.setImageResource(ballItem[body.num1 - 1].ImgResId)
+        iv_ball_2.setImageResource(ballItem[body.num2 - 1].ImgResId)
+        iv_ball_3.setImageResource(ballItem[body.num3 - 1].ImgResId)
+        iv_ball_4.setImageResource(ballItem[body.num4 - 1].ImgResId)
+        iv_ball_5.setImageResource(ballItem[body.num5 - 1].ImgResId)
+        iv_ball_6.setImageResource(ballItem[body.num6 - 1].ImgResId)
+        iv_ball_bonus.setImageResource(ballItem[body.bonusNum - 1].ImgResId)
 
     }
 
