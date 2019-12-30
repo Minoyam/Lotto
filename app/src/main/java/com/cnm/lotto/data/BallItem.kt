@@ -1,4 +1,6 @@
-package com.cnm.lotto
+package com.cnm.lotto.data
+
+import com.cnm.lotto.R
 
 enum class BallItem(
     val ImgResId : Int

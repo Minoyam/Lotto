@@ -5,9 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.cnm.lotto.BallItem
 import com.cnm.lotto.DateBase
 import com.cnm.lotto.R
+import com.cnm.lotto.data.BallItem
 import com.cnm.lotto.network.NetworkHelper
 import com.cnm.lotto.network.lotto.LottoResponse
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -23,8 +23,8 @@ import kotlinx.android.synthetic.main.fragment_result.*
 
 class ResultFragment : Fragment(), DateBase {
 
-    private val nowDate = getDate()
-    private var date = 0
+    private var drawNum = 0
+    private var currentNum = 0
     private val disposable = CompositeDisposable()
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -36,20 +36,17 @@ class ResultFragment : Fragment(), DateBase {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        if (date == 0) {
-            date = nowDate
-            winningNumberCheck(date)
-        }
+        currentNumberCheck()
         ib_back.setOnClickListener {
             showLoading()
-            date -= 7
-            winningNumberCheck(date)
+            drawNum--
+            winningNumberCheck()
         }
         ib_forward.setOnClickListener {
-            showLoading()
-            if (date != nowDate) {
-                date += 7
-                winningNumberCheck(date)
+            if (currentNum > drawNum) {
+                showLoading()
+                drawNum++
+                winningNumberCheck()
             }
         }
     }
@@ -59,9 +56,9 @@ class ResultFragment : Fragment(), DateBase {
         disposable.clear()
     }
 
-    private fun winningNumberCheck(date: Int) {
+    private fun winningNumberCheck() {
         disposable.add(
-            NetworkHelper.lottoApi.getLotto(date).observeOn(
+            NetworkHelper.lottoApi.getLotto(drawNum).observeOn(
                 AndroidSchedulers.mainThread()
             )
                 .subscribe {
@@ -69,6 +66,20 @@ class ResultFragment : Fragment(), DateBase {
                     setLottoList(it.body)
                 }
 
+        )
+    }
+
+    private fun currentNumberCheck() {
+        disposable.add(
+            NetworkHelper.lottoApi.getDraw(getDate()).observeOn(
+                AndroidSchedulers.mainThread()
+            )
+                .subscribe {
+                    hideLoading()
+                    setLottoList(it.body)
+                    currentNum = it.body.drawNo
+                    drawNum = it.body.drawNo
+                }
         )
     }
 
